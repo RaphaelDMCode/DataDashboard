@@ -1,0 +1,251 @@
+/* ---[App.jsx]--- */
+.Temporary-Pokemon {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.summary-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+.summary-card {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2 ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.summary-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ---[Search Bar]--- */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.search-bar {
+    width: 250px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2 ease;
+}
+
+.filter-dropdown {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+
+/* ---[Header.jsx]--- */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px;
+    background-color: #363636;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* ---[NavBar.jsx]--- */
+.navBar-container {
+    background-color: #444444;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navBar-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;   /* Removes the Dots */
+    gap: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar-item {
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    font-weight: bold;
+    transition: color 0.1s ease, transform 0.2s ease;
+}
+
+.navBar-item:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+
+/* ---[Cards.jsx]--- */
+.card-layout-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-x: auto; */
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+    /* scroll-behavior: smooth; */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-sprite {
+    width: 100px;
+    height: 100px;
+}
+
+.card-data {
+    text-align: center;
+    margin-top: 10px;
+}
+.card-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.card-type, .card-stat {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* ---[Types]--- */
+/* <List of Types Color> */
+.type-item.electric { background-color: #f8d030; border: solid #d4b22b;}  /* Electric */
+.type-item.steel { background-color: #b8b8d0; border: solid #a1a1aa;}     /* Steel */
+.type-item.fire { background-color: #f08030; border: solid #c8763b;}      /* Fire */
+.type-item.water { background-color: #6890f0; border: solid #5677c4;}     /* Water */
+.type-item.grass { background-color: #78c850; border: solid #609f40;}     /* Grass */
+.type-item.ghost { background-color: #705898; border: solid #55466e;}     /* Ghost */
+.type-item.psychic { background-color: #f85888; border: solid #ca5a7c;}   /* Psychic */
+.type-item.normal { background-color: #a8a878; border: solid #8a8a62;}    /* Normal */
+.type-item.ground { background-color: #e0c068; border: solid #ad9450;}    /* Ground */
+.type-item.ice { background-color: #98d8d8; border: solid #79adad;}       /* Ice */
+.type-item.dragon { background-color: #7038f8; border: solid #542eaf;}    /* Dragon */
+.type-item.fairy { background-color: #ee99ac; border: solid #be7b89;}     /* Fairy */
+.type-item.dark { background-color: #705848; border: solid #564437;}      /* Dark */
+.type-item.fighting { background-color: #c03028; border: solid #8f231e;}  /* Fighting */
+.type-item.poison { background-color: #a040a0; border: solid #7e327e;}    /* Poison */
+.type-item.bug { background-color: #a8b820; border: solid #84901f;}       /* Bug */
+.type-item.rock { background-color: #b8a038; border: solid #9e8a30;}      /* Rock */
+.type-item.flying { background-color: #a890f0; border: solid #8874c4;}    /* Flying */
+
+.type-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.type-item {
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 13px;
+    text-transform:uppercase;
+}
+
+
+/* ---[List.jsx]--- */
+.list-container {
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+
+.poke-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.poke-table th {
+    background-color: #424242;
+    color: white;
+    padding: 10px;
+    border-bottom: 10px solid #2f2f2f;
+}
+
+.poke-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.list-sprite {
+    width: 60px;
+    height: 60px;
+}
+
+.poke-table tr:hover {
+    background-color: #f7f7f7;
+    transition: background-color 0.2s ease;
+}
