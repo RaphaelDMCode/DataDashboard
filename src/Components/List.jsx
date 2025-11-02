@@ -1,7 +1,7 @@
 // ---[Display List of Pokemon]--- //
 import { useEffect, useState } from "react";
 
-const List = ({searchTerm, filterType}) => {
+const List = ({searchTerm, filterType, minBaseExp, maxBaseExp}) => {
 
     const [pokemonList, setPokemonList] = useState([]);
 
@@ -33,7 +33,12 @@ const List = ({searchTerm, filterType}) => {
         const Search = searchTerm ? searchTerm.toLowerCase() : "";
         const MatchedSearch = poke.name.toLowerCase().includes(Search);
         const MatchedTyped = filterType ? poke.types.some(t => t.type.name === filterType) : true;
-        return MatchedSearch && MatchedTyped;
+
+        const Min = minBaseExp ? parseInt(minBaseExp) : 0;
+        const Max = maxBaseExp ? parseInt(maxBaseExp) : Infinity;
+        const MatchedExp = poke.base_experience >= Min && poke.base_experience <= Max;
+
+        return MatchedSearch && MatchedTyped && MatchedExp;
     });
 
     return (
@@ -47,6 +52,12 @@ const List = ({searchTerm, filterType}) => {
                         <th>Name</th>
                         <th>Type</th>
                         <th>Base Experiences</th>
+                        <th>HP</th>
+                        <th>Attack</th>
+                        <th>Defense</th>
+                        <th>Sp. Atk</th>
+                        <th>Sp. Def</th>
+                        <th>Speed</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,6 +83,10 @@ const List = ({searchTerm, filterType}) => {
                             </td>
 
                             <td>{poke.base_experience}</td>
+
+                            {poke.stats.map((stats) => (
+                                <td key={stats.stat.name}>{stats.base_stat}</td>
+                            ))}
                         </tr>
                     ))}
                 </tbody>

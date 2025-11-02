@@ -1,7 +1,7 @@
 // ---[Displays Pokémons Informations]--- //
 import { useEffect, useState } from "react";
 
-const Card = ({searchTerm, filterType}) => {
+const Card = ({searchTerm, filterType, minBaseExp, maxBaseExp}) => {
 
     const [pokemonList, setPokemonList] = useState([]);
 
@@ -32,7 +32,12 @@ const Card = ({searchTerm, filterType}) => {
     const filteredPokemns = pokemonList.filter(poke => {
         const MatchedSearch = poke.name.toLowerCase().includes(searchTerm.toLowerCase());
         const MatchedTyped = filterType ? poke.types.some(t => t.type.name === filterType) : true;
-        return MatchedSearch && MatchedTyped;
+
+        const Min = minBaseExp ? parseInt(minBaseExp) : 0;
+        const Max = maxBaseExp ? parseInt(maxBaseExp) : Infinity;
+        const MatchedExp = poke.base_experience >= Min && poke.base_experience <= Max;
+
+        return MatchedSearch && MatchedTyped && MatchedExp;
     });
 
     return (

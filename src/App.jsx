@@ -7,10 +7,15 @@ import List from './Components/List'
 
 function App() {
   const [pokemonCount, setPokemonCount] = useState(0);
+
   const [typeCount, setTypeCount] = useState(0);
   const [moveCount, setMoveCount] = useState(0);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('');
+
+  const [minBaseExp, setMinBaseExp] = useState('');
+  const [maxBaseExp, setMaxBaseExp] = useState('');
 
   useEffect(() => {
     const fetchStat = async () => {
@@ -103,17 +108,21 @@ function App() {
           <option value="flying">Flying</option>
         </select>
 
+        {/* Base Experience - Specific Bounds */}
+        <input type="number" className='exp-filter' placeholder='Min BE' value={minBaseExp} onChange={(e) => setMinBaseExp(e.target.value)} />
+        <input type="number" className='exp-filter' placeholder='Max BE' value={maxBaseExp} onChange={(e) => setMaxBaseExp(e.target.value)} />
+
       </div>
 
 
       {/* ---[Card]--- */}
       <div className='Temporary-Pokemon'>
-      <Card searchTerm={searchTerm} filterType={filterType} />
+      <Card searchTerm={searchTerm} filterType={filterType} minBaseExp={minBaseExp} maxBaseExp={maxBaseExp} />
       </div>
 
 
       {/* ---[List]--- */}
-      <List searchTerm={searchTerm} filterType={filterType} />
+      <List searchTerm={searchTerm} filterType={filterType} minBaseExp={minBaseExp} maxBaseExp={maxBaseExp} />
 
 
     </div>
