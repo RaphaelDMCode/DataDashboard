@@ -4,7 +4,7 @@ Submitted by: Raphael Dean Mendones
 
 This web app: The Dashboard is a Data Visualization to Pokémons Data like their Base Experience and the Base Stats with Charts from React.
 
-Time spent: 12 hours spent in total
+Time spent: 12-14 hours spent in total
 
 ## Required Features
 
@@ -46,7 +46,7 @@ GIF created with LICEcap
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Walkthorugh-Proj-DataDash2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
