@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import NavBar from './Components/NavBar'
 import Card from './Components/Cards'
 import List from './Components/List'
+import AveExpChart from './Components/AveExpChart'
 
 function App() {
   const [pokemonCount, setPokemonCount] = useState(0);
@@ -53,6 +54,18 @@ function App() {
       {/* ---[NavBar]--- */}
       <NavBar />
 
+      {/* About */}
+      <section className='about-info'>
+        <p>
+          The Dashboard is a Data Visualization to Pokémons Data like their Base Experience and the Base Stats they have by clicking on them. 
+        </p>
+        <p>
+          Clicking on one of the Pokémon Cards will get you into their Individual section where you could see their Base Stats (Hp, Atk, Def, Sp. Atk, Sp. Def, Spd)
+        </p>
+        <p>
+          On the bottom of the Cards page, is a Line Chart of a Pokémon Base Experience for each 21 Types available.
+        </p>
+      </section>
 
       {/* ---[Summary]--- */}
       <section className='summary-section'>
@@ -120,6 +133,10 @@ function App() {
       <Card searchTerm={searchTerm} filterType={filterType} minBaseExp={minBaseExp} maxBaseExp={maxBaseExp} />
       </div>
 
+      {/* Data Visualization */}
+      <section className='DataViz-section'>
+        <AveExpChart />
+      </section>
 
       {/* ---[List]--- */}
       <List searchTerm={searchTerm} filterType={filterType} minBaseExp={minBaseExp} maxBaseExp={maxBaseExp} />

@@ -1,5 +1,6 @@
 // ---[Displays Pokémons Informations]--- //
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
 
 const Card = ({searchTerm, filterType, minBaseExp, maxBaseExp}) => {
 
@@ -43,14 +44,15 @@ const Card = ({searchTerm, filterType, minBaseExp, maxBaseExp}) => {
     return (
         <div className="card-layout-grid">
             {filteredPokemns.map((poke) => (
-                <div className="card-container" key={poke.id}>
+                
+                <Link className="card-container" key={poke.id} to={`/pokemon/${poke.name}`} style={{textDecoration: "none", color: "inherit"}}>
 
                     {/* ---[Pokemon Sprite]--- */}
                     <img 
                         src={poke.sprites.front_default} 
                         className="card-sprite" 
                     />
-
+                
                     {/* ---[Pokemon Data]--- */}
                     <div className="card-data">
                         <h3 className="card-name">{poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}</h3>
@@ -67,8 +69,8 @@ const Card = ({searchTerm, filterType, minBaseExp, maxBaseExp}) => {
 
                         <p className="card-stat">Base Experiences: {poke.base_experience}</p>
                     </div>
+                </Link>
 
-                </div>
             ))}
         </div>
     )
